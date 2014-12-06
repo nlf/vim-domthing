@@ -31,7 +31,7 @@ syntax match domthingFunctions /\*\|===\|==\|+\|-\|\/\|%\|<\|>\|!/ contained con
 
 syntax match domthingConditionals /[#/]if\|#else/ contained containedin=domthingInside
 
-syntax cluster htmlDomthingContainer add=htmlHead,htmlTitle,htmlH1,htmlH2,htmlH3,htmlH4,htmlH5,htmlH6,htmlLink,htmlBold,htmlUnderline,htmlItalic,htmlValue
+syntax cluster htmlDomthingContainer add=htmlHead,htmlTitle,htmlH1,htmlH2,htmlH3,htmlH4,htmlH5,htmlH6,htmlLink,htmlBold,htmlUnderline,htmlItalic,htmlValue,htmlString
 
 HtmlHiLink domthingString String
 HtmlHiLink domthingDString String
