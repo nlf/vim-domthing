@@ -26,9 +26,7 @@ syntax cluster domthingRegions add=domthingInside,domthingCondition,domthingList
 syntax region domthingString start=/'/ skip=/\\'/ end=/'/ contained containedin=@domthingRegions
 syntax region domthingDString start=/"/ skip=/\\"/ end=/"/ contained containedin=@domthingRegions
 
-syntax keyword domthingFunctions if leq lteq geq gteq concat safe call apply not contained containedin=domthingList
-syntax match domthingFunctions /\*\|===\|==\|+\|-\|\/\|%\|<\|>\|!/ contained containedin=domthingList
-
+syntax match domthingFunctions /(\@<=[^\t ]\+/ contained containedin=domthingList
 syntax match domthingConditionals /[#/]if\|#else/ contained containedin=domthingInside
 
 syntax cluster htmlDomthingContainer add=htmlHead,htmlTitle,htmlH1,htmlH2,htmlH3,htmlH4,htmlH5,htmlH6,htmlLink,htmlBold,htmlUnderline,htmlItalic,htmlValue,htmlString
