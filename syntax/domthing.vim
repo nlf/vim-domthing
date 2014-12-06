@@ -17,7 +17,7 @@ else
   command! -nargs=+ HtmlHiLink hi def link <args>
 endif
 
-syntax region domthingInside matchgroup=Delimiter start=/{{/ end=/}}/ contained containedin=@htmlDomthingContainer
+syntax region domthingInside matchgroup=Delimiter start=/{{/ end=/}}/ contains=@domthingRegions,@htmlTop containedin=@htmlDomthingContainer
 syntax region domthingCondition start='{{#if' end='{{\/if}}' keepend contains=@domthingRegions,@htmlTop
 syntax region domthingList matchgroup=Delimiter start=/(/ end=/)/ contained containedin=@domthingRegions contains=domthingList
 
@@ -31,7 +31,7 @@ syntax match domthingFunctions /\*\|===\|==\|+\|-\|\/\|%\|<\|>\|!/ contained con
 
 syntax match domthingConditionals /[#/]if\|#else/ contained containedin=domthingInside
 
-syntax cluster htmlDomthingContainer add=htmlHead,htmlTitle,htmlString,htmlH1,htmlH2,htmlH3,htmlH4,htmlH5,htmlH6,htmlLink,htmlBold,htmlUnderline,htmlItalic,htmlValue
+syntax cluster htmlDomthingContainer add=htmlHead,htmlTitle,htmlH1,htmlH2,htmlH3,htmlH4,htmlH5,htmlH6,htmlLink,htmlBold,htmlUnderline,htmlItalic,htmlValue
 
 HtmlHiLink domthingString String
 HtmlHiLink domthingDString String
